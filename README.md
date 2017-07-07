@@ -1,2 +1,2 @@
-# sdk-cli
-A simple CLI for scaffolding js-sdk projects.
+# ease-cli
+A simple CLI for scaffolding web projects.

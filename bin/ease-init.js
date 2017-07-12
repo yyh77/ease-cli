@@ -92,7 +92,7 @@ function run () {
   } else {
     if (!hasSlash) {
       // use official templates
-      let officialTemplate = 'yyh77/' + template
+      let officialTemplate = 'ease-templates/' + template
       downloadAndGenerate(officialTemplate)
     } else {
       downloadAndGenerate(template)

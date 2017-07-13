@@ -41,7 +41,7 @@ helpIfNeed()
 let [ template, rawName ] = program.args
 const hasSlash = template.indexOf('/') > -1
 const inPlace = !rawName || rawName === '.'
-const name = inPlace ? path.relative('../', process.cwd()) : rawName
+const name = inPlace ? path.relative('../', process.cwd()) : path.relative('../', rawName)
 const to = path.resolve(rawName || '.')
 const clone = program.clone || false
 

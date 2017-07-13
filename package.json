@@ -1,6 +1,6 @@
 {
   "name": "ease-cli",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A simple CLI for scaffolding web front-end projects.",
   "main": "index.js",
   "repository": "git@github.com:yyh77/ease-cli.git",
@@ -9,11 +9,14 @@
   "keywords": [
     "ease-cli",
     "web",
+    "front-end",
     "cli"
   ],
   "bin": {
-    "ease": "./bin/ease.js",
-    "ease-init": "./bin/ease-init.js"
+    "ease": "bin/ease.js",
+    "ease-init": "bin/ease-init.js",
+    "ease-list": "bin/ease-list.js",
+    "ease-serve": "bin/ease-serve.js"
   },
   "devDependencies": {
     "eslint": "^4.1.1",
@@ -29,6 +32,7 @@
     "commander": "^2.11.0",
     "consolidate": "^0.14.5",
     "download-git-repo": "^1.0.1",
+    "express": "^4.15.3",
     "handlebars": "^4.0.10",
     "inquirer": "^3.2.0",
     "metalsmith": "^2.3.0",
@@ -43,5 +47,8 @@
     "user-home": "^2.0.0",
     "util": "^0.10.3",
     "validate-npm-package-name": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=6.4.0"
   }
 }

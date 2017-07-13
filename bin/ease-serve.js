@@ -17,7 +17,7 @@ const rawName = program.args[0] || '.'
 const index = program.index
 const destHtml = resolve(rawName, index)
 const projectDir = resolve(rawName)
-const projectName = relative('../', projectDir)
+const projectName = relative(resolve(projectDir, '../'), projectDir)
 
 process.on('exit', function () {
   console.log()

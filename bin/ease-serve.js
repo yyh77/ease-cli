@@ -36,21 +36,21 @@ function serve () {
   const app = express()
   const port = program.port
 
-  app.use(
-    express.static(rawName, { index })
-  )
+  app.use(express.static(rawName, { index }))
   app.use(function (err, req, res, next) {
     if (err) throw err
     next()
   })
 
   console.log('> Starting server...')
-  app.listen(port, '127.0.0.1', function (err) {
+  app.listen(port, '0.0.0.0', function (err) {
     if (err) {
       throw err
     }
     console.log()
-    console.log(`> Serving project ${chalk.blue(projectName)}(${tildify(projectDir)})`)
+    console.log(
+      `> Serving project ${chalk.blue(projectName)}(${tildify(projectDir)})`
+    )
     console.log(`> Listening at http://localhost:${chalk.green(port)}`)
   })
 }

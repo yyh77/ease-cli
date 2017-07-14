@@ -6,6 +6,7 @@ const chalk = require('chalk')
 const exists = require('fs').existsSync
 const { resolve, relative } = require('path')
 const tildify = require('tildify')
+const userhome = require('user-home')
 
 program
   .usage('[project-name]')
@@ -15,8 +16,8 @@ program
 
 const rawName = program.args[0] || '.'
 const index = program.index
-const destHtml = resolve(rawName, index)
-const projectDir = resolve(rawName)
+const projectDir = process.platform === 'win32' ? rawName.replace(/^~/, userhome) : rawName
+const destHtml = resolve(projectDir, index)
 const projectName = relative(resolve(projectDir, '../'), projectDir)
 
 process.on('exit', function () {

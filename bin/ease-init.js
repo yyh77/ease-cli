@@ -41,8 +41,8 @@ helpIfNeed()
 let [ template, rawName ] = program.args
 const hasSlash = template.indexOf('/') > -1
 const inPlace = !rawName || rawName === '.'
-const name = inPlace ? path.relative('../', process.cwd()) : path.relative('../', rawName)
 const to = path.resolve(rawName || '.')
+const name = path.relative(path.resolve(to, '../'), to)
 const clone = program.clone || false
 
 let tmp = path.join(home, '.ease-templates', template.replace(/\//g, '-'))
